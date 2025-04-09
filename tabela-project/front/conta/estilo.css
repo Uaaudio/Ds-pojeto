@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+    background-image: url(../img/bg-azul\ \(1\).png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+
+.profile-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2c5fa8;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 30px;
+    background: rgba(44, 95, 168, 0.1);
+}
+
+.logout-btn:hover {
+    background: #2c5fa8;
+    color: white;
+    transform: scale(1.05);
+}
+
+.profile-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2c5fa8;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    order: 2;
+}
+
+.greeting h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #1a237e;
+    margin-bottom: 15px;
+}
+
+.highlight {
+    color: #2c5fa8;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration: none;
+
+}
+
+.role {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #4a5568;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.quote {
+    background: rgba(44, 95, 168, 0.05);
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 4px solid #2c5fa8;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #2c5fa8;
+    line-height: 1.4;
+}
+
+.quote i:first-child {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: #2c5fa8;
+    opacity: 0.3;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f8f9fa;
+    padding: 15px 25px;
+    border-radius: 50px;
+    width: fit-content;
+}
+
+#email{
+    text-decoration: none;
+}
+
+#email:hover span{
+    color: #006bd6;
+    transition: ease-in-out .2s;
+}
+
+.contact i {
+    color: #2c5fa8;
+    font-size: 1.2rem;
+}
+
+.contact span {
+    color: #4a5568;
+    font-weight: 500;
+}
+
+
+/*
+@media (max-width: 768px) {
+    .profile-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-avatar {
+        order: -1;
+    }
+
+    .contact {
+        margin: 0 auto;
+    }
+
+    .greeting h1 {
+        font-size: 2rem;
+    }
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MENU LATERAL */
+nav.menu_lateral{
+    width: 78px;
+    height: 100%;
+    background-color: #2c3e50; /* Cinza Escuro */
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 #e7f1f9; /* Azul Claro */
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .4s;
+    z-index: 1000;
+}
+
+nav.menu_lateral:hover{
+    width: 300px;
+}
+
+.b_expandir {
+    font-size: 25px;
+    width: 100%;
+    padding-left: 6px;
+    margin-bottom: 22px;
+}
+
+#conta{
+    color: white;
+}
+
+.b_expandir > i {
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+ul {
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item_menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: -10px;
+    line-height: 35px;
+}
+
+ul li.item_menu a .txt_link{
+    margin-left: 40px;
+}
+
+ul li.item_menu a .icon > i{
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+ul li.item_menu{
+    transition: 0.4s;
+}
+
+ul li.item_menu:hover{
+    border-radius: 10px;
+    background-color:  #006bd6; /* Azul */
+}
+/* MENU LATERAL */
