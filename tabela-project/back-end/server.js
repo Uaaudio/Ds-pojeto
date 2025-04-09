@@ -1,10 +1,6 @@
 const express = require('express');
-const cors = require('cors');
 const usuarioRoutes = require('./routes/usuarioRoutes');
 const app = express();
-
-// habilitar CORS para todas as rotas e origens
-app.use(cors());
 
 
 // middleware para parsear JSON
