@@ -2,7 +2,7 @@ CREATE DATABASE if not exists horarios_docentes;
 USE horarios_docentes;
 
 -- Tabela para cadastro dos docentes
-CREATE TABLE if not exists docentes (
+CREATE TABLE if not exists docente (
 id INT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(100) NOT NULL,
 area VARCHAR(50),
