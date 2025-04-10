@@ -25,6 +25,7 @@ document.getElementById("formCadastro").addEventListener("submit", async functio
         const resultado = await response.json();
         if (response.ok){
             alert('Usuário cadastrado com sucesso!');
+            window.location.href= '../login/index.html'
         }
         else {
             alert(`Erro: ${resultado.error}`);
