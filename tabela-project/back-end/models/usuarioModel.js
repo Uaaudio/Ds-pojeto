@@ -47,10 +47,10 @@ exports.cadastrar = async (nome, email, senha, nivel_acesso) => {
 
         if (nivelFinal === 'docente') {
             const [docenteResult] = await connection.query(
-                'INSERT INTO Docente (nome, email) VALUES (?, ?)',
+                'INSERT INTO docente (nome, email) VALUES (?, ?)',
                 [nome, email]
             );
-            const docentId = docenteResult.insertId;
+            const docenteId = docenteResult.insertId;
 
             // atualizar usuario com o docenteId
 
@@ -90,5 +90,5 @@ exports.cadastrar = async (nome, email, senha, nivel_acesso) => {
         if (error.code === 'ER_DUP_ENTRY') {
             throw new Error('Este email ja esta cadastrado')
         }
-    } throw error
+    throw error} 
 }

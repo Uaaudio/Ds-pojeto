@@ -1,5 +1,5 @@
 const usuarioModel = require('../models/usuarioModel');
-const bcrypt = require ('bcrypt');
+
 
 // funcao de cadastro
 
