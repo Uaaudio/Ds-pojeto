@@ -7,7 +7,7 @@ exports.cadastrarUsuario = async (req,res) => {
     try{    const {nome, email, senha, nivel_acesso} =  req.body;
     
     //verificar se todos os campos foram preenchidos
-     if(!nome || !email || !senha || !nivel_acesso){
+     if(!nome || !email || !senha){
     return res.status(400).json({error: 'Todos os campos são obrigatórios!'})
 }
     // verificar se o email já existe no banco de dados
@@ -27,7 +27,7 @@ exports.cadastrarUsuario = async (req,res) => {
     // mensagem conforme tipo de usuario
     const message = resultado.isFirstUser
     ? ' Coordenador cadastrado com sucesso!'
-    : 'Professor cadastrado com sucesso!';
+    : 'Docente cadastrado com sucesso!';
 
     // resposta suscesso
     res.status(201).json({
