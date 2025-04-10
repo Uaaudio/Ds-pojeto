@@ -21,8 +21,7 @@ exports.cadastrarUsuario = async (req,res) => {
     const resultado = await usuarioModel.cadastrar(
         nome,
         email,
-        hash,
-        req.body.nivel_acesso
+        hash
     )
 
     // mensagem conforme tipo de usuario
@@ -36,6 +35,8 @@ exports.cadastrarUsuario = async (req,res) => {
         message,
         data:{
             id: resultado.userId,
+            nome,
+            email,
             nivel_acesso: resultado.nivel_acesso
         }
     });
