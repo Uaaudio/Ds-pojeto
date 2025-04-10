@@ -37,18 +37,20 @@ dia_semana
 ENUM('Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'),
 hora_inicio TIME,
 hora_fim TIME,
-FOREIGN KEY (docente_id) REFERENCES docentes(id),
+FOREIGN KEY (docente_id) REFERENCES docente(id),
 FOREIGN KEY (turma_id) REFERENCES turmas(id)
 );
 
 -- Tabela para gerenciamento de login e senha com nível de acesso
 CREATE TABLE if not exists usuarios (
 id INT AUTO_INCREMENT PRIMARY KEY,
-usuario VARCHAR(50) UNIQUE NOT NULL,
+email VARCHAR(50) UNIQUE NOT NULL,
 senha VARCHAR(255) NOT NULL,
-nivel_acesso ENUM('coordenador','professor') NOT NULL,
+nivel_acesso ENUM('coordenador','docente') NOT NULL,
 docente_id INT,
 coordenador_id INT,
 FOREIGN KEY (docente_id) REFERENCES docentes(id),
 FOREIGN KEY (coordenador_id) REFERENCES coordenadores(id)
 );
+
+
