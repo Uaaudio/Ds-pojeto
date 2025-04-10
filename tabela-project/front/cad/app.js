@@ -10,8 +10,7 @@ document.getElementById("formCadastro").addEventListener("submit", async functio
     const dados = {
     nome: nome,
     email: email,
-    senha: senha,
-    nivel_acesso: 'professor'
+    senha: senha
     };
 
     try {
@@ -42,7 +41,7 @@ document.getElementById("formCadastro").addEventListener("submit", async functio
 document.addEventListener('DOMContentLoaded', function (){
     const senha = document.getElementById('senha');
     const senhaConfirmacao = document.getElementById('confirmacaoSenha');
-    const errorMessage = document.getElementById('errorMesssage');
+    const errorMessage = document.getElementById('errorMessage');
     const submitButton = document.querySelector('button[type="submit"]');
     
     function verificarSenha (){
@@ -52,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function (){
         }
         else {
             errorMessage.style.display = 'none'; // esconde mensagem de erro de senha
-            submitButton.disabled = 'false' // habilita botao cadastrar
+            submitButton.disabled = false // habilita botao cadastrar
         }
     }
 
