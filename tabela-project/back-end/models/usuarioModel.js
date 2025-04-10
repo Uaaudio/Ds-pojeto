@@ -1,12 +1,47 @@
-const connection = require('../config/db');
+const db = require('../config/db');
+const bcrypt = require('bcrypt')
 
 exports.buscarPorEmail = (email, callback) => {
     const query = 'SELECT * FROM usuarios WHERE email = ?';
-    connection.query(query, [email], callback);
+    db.query(query, [email], callback);
 }
+exports.verificarPrimeiroUsuario = async () => {
+    try {
+        const [rows] = await db.query('SELECT COUNT(*) as total from usuarios');
+        return rows[0].total === 0;
+    }
+    catch (error) {
+        console.error('Erro ao verificar usuarios:', error);
+        throw error;
+    }
+}
+exports.cadastrar = async (nome, email, senha, nivel_acesso) => {
+    try {
+        //verifica se eh o primeiro usuario
+        const isPrimeiroUsuario = await this.verificarPrimeiroUsuario();
 
-exports.cadastrar = (nome, email, senha, nivel_acesso, callback) => {
-    const query = 'INSERT INTO usuarios (nome, email, senha, nivel_acesso) VALUES (?,?,?,?)';
-    connection.query(query,[nome, email, senha, nivel_acesso], callback);
+        const nivelFinal = isPrimeiroUsuario ? 'coordenador' : nivel_acesso;
 
+        //criiptografando senha
+        const hash = await bcrypt.hash(senha, 10);
+
+        //inserindo no banco de dados 
+        const [result] = await db.query(
+            'INSERT INTO usuarios (nome, email, senha, nivel_acesso) VALUES (?,?,?,?)',
+            [nome, email, hash, nivelFinal]
+        );
+        return {
+            success: true,
+            userId: result.insertId,
+            isFirstUser: isPrimeiroUsuario
+        };
+
+    } catch (error) {
+        console.error('Erro ao cadastrar usuario', error);
+
+        //Tratamento especifico para email duplicado
+        if (error.code === 'ER_DUP_ENTRY') {
+            throw new Error('Este email ja esta cadastrado')
+        }
+    } throw error
 }
