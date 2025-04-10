@@ -14,8 +14,7 @@ exports.cadastrarUsuario = async (req,res) => {
     const usuarioExistente = await usuarioModel.buscarPorEmail(email);
     if (usuarioExistente){ return res.status(400).json({error: 'Este e-mail já foi cadastrado!'});
 }
-    // criptografar a senha
-    const hash = await bcrypt.hash(senha,10)
+
 
     // cadastrar usuario
     const resultado = await usuarioModel.cadastrar(
