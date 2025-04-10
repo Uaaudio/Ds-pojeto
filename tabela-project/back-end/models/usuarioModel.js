@@ -26,7 +26,7 @@ exports.cadastrar = async (nome, email, senha, nivel_acesso) => {
         //verifica se eh o primeiro usuario
         const isPrimeiroUsuario = await this.verificarPrimeiroUsuario();
 
-        const nivelFinal = isPrimeiroUsuario ? 'coordenador' : nivel_acesso;
+        const nivelFinal = isPrimeiroUsuario ? 'coordenador' : 'professor';
 
         //criiptografando senha
         const hash = await bcrypt.hash(senha, 10);
@@ -39,6 +39,7 @@ exports.cadastrar = async (nome, email, senha, nivel_acesso) => {
         return {
             success: true,
             userId: result.insertId,
+            nivel_acesso: nivelFinal,
             isFirstUser: isPrimeiroUsuario
         };
 
