@@ -5,8 +5,8 @@ const bcrypt = require ('bcrypt');
 
 exports.cadastrarUsuario = async (req,res) => {
     try{    const {nome, email, senha, nivel_acesso} =  req.body;
-    //verificar se todos os campos foram preenchidos
     
+    //verificar se todos os campos foram preenchidos
      if(!nome || !email || !senha || !nivel_acesso){
     return res.status(400).json({error: 'Todos os campos são obrigatórios!'})
 }
@@ -22,12 +22,22 @@ exports.cadastrarUsuario = async (req,res) => {
         nome,
         email,
         hash,
-        nivel_acesso
+        req.body.nivel_acesso
     )
+
+    // mensagem conforme tipo de usuario
+    const message = resultado.isFirstUser
+    ? ' Coordenador cadastrado com sucesso!'
+    : 'Professor cadastrado com sucesso!';
+
     // resposta suscesso
     res.status(201).json({
-        message: 'Usuario cadastrado com sucesso!',
-        userId: resultado.insertId
+        success: true,
+        message,
+        data:{
+            id: resultado.userId,
+            nivel_acesso: resultado.nivel_acesso
+        }
     });
 }catch (error){
     console.error('Erro no cadastro:', error);
