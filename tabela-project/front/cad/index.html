@@ -4,21 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <script src="back-end/script.js"></script>
+    <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
     <img src="../img/logo_rel.jfif" alt="Logo">
     <div class="login-container">
+        <form id = "formCadastro">
+
         <h2>Cadastro</h2>
-        <input type="text" placeholder="Nome Completo" id="fullName">
+
+        <div>
+        <input type="text" placeholder="Nome Completo" id="name">
+        </div>
+        
+        <div>
         <input type="email" placeholder="Email" id="email">
-        <input type="password" placeholder="Senha" id="password">
-        <input type="password" placeholder="Confirmar Senha" id="confirmPassword">
-        <button onclick="register()">Cadastrar</button>
+        </div>
+        
+        <div>
+        <input type="password" placeholder="Senha" id="senha">
+        </div>   
+
+
+        <div>
+        <input type="password" placeholder="Confirmar Senha" id="confirmacaoSenha">
+        </div>
+        
+        <p id = "errorMessage" style="color: red; display: none;">As senhas não coincidem</p>
+        
+        <button type="submit">Cadastrar</button>
+        
         <a href="../login/index.html"><p>Já possui cadastro? Faça login aqui!</p></a>
     </div>
+</form>
+
+
 
 </body>
 </html>
