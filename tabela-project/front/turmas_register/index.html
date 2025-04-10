@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Turma</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1976D2;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Registro de Turma</h2>
+
+  <form action="/registrar-turma" method="post">
+    <label for="nome">Nome da Turma:</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="curso">Curso:</label>
+    <input type="text" id="curso" name="curso" required>
+
+    <label for="periodo">Período:</label>
+    <select id="periodo" name="periodo" required>
+      <option value="">Selecione o período</option>
+      <option value="matutino">Matutino</option>
+      <option value="vespertino">Vespertino</option>
+      <option value="noturno">Noturno</option>
+    </select>
+
+    <button type="submit">Registrar Turma</button>
+  </form>
+
+</body>
+</html>
