@@ -1,56 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
-  <title>Registro de Turma</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-    }
+  <link rel="stylesheet" href="style.css" class="css">
 
-    form {
-      max-width: 400px;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-    }
-
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-
-    input[type="text"],
-    select {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      box-sizing: border-box;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 10px 15px;
-      background-color: #2196F3;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #1976D2;
-    }
-  </style>
 </head>
+
 <body>
 
-  <h2>Registro de Turma</h2>
-
-  <form action="/registrar-turma" method="post">
+  <h1>Registro de Turma</h1>
+  <form action="/registrar-turma" method="post" class="box">
     <label for="nome">Nome da Turma:</label>
     <input type="text" id="nome" name="nome" required>
 
@@ -68,5 +28,10 @@
     <button type="submit">Registrar Turma</button>
   </form>
 
+
+  <!-- LINK TELA DE MENU -->
+<!-- <a href="/tabela-project/front/main/indes.html"></a> -->
+
 </body>
+
 </html>
