@@ -1,6 +1,10 @@
 
 const monthYearEl = document.getElementById('monthYear');
 const calendarBody = document.getElementById('calendarBody');
+// EXEMPLO PARA DIFERENCIAR UM DOCENTE DE OUTRO
+const docente = 2;
+// IDENTIFICAR UM COORDENADOR
+const coordenador = false;
 
 const hoje = new Date();
 let currentMonth = hoje.getMonth();
@@ -32,12 +36,29 @@ function generateCalendar(month, year) {
 
         // Exemplo: Adicionar evento fictício em terças
         const dayOfWeek = new Date(year, month, date).getDay();
-        if (dayOfWeek === 2) {
-          cell.innerHTML += `<div class="event">📡 Aula: Internet das Coisas</div>`;
-        } else if (dayOfWeek === 1 || dayOfWeek === 3 || dayOfWeek === 5) {
-          cell.innerHTML += `<div class="event">🕒 Aula: Desenvolvimento</div>`;
+// coordenador = true -> PARA MOSTRAR TODAS AS AULAS APENAS PARA O COORDENADOR
+        if (coordenador === true){
+          if (dayOfWeek === 2) {
+            cell.innerHTML += `<div class="event"> Aula: Internet das Coisas</div>`;
+          } 
+          else if (dayOfWeek === 1 || dayOfWeek === 3 || dayOfWeek === 5) {
+            cell.innerHTML += `<div class="event"> Aula: Desenvolvimento</div>`;
+          }
         }
-
+        if (coordenador === false ){
+// docente === 1 -> É UM EXEMPLO, MAS DEVE SER TROCADO PELO ID DELE OU POR ALGUMA IDENTIFICAÇÃO
+        if (docente === 1 ) {
+        if (dayOfWeek === 2) {
+            cell.innerHTML += `<div class="event"> Aula: Internet das Coisas</div>`;
+          }
+        } 
+// docente === 2 -> É OUTRO EXEMPLO
+        if (docente === 2){
+          if (dayOfWeek === 1 || dayOfWeek === 3 || dayOfWeek === 5) {
+            cell.innerHTML += `<div class="event"> Aula: Desenvolvimento</div>`;
+          }
+        }
+      }
         // Destacar o dia atual
         if (date === hoje.getDate() && month === hoje.getMonth() && year === hoje.getFullYear()) {
           cell.classList.add("today");
