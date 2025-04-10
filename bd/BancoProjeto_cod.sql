@@ -44,6 +44,7 @@ FOREIGN KEY (turma_id) REFERENCES turmas(id)
 -- Tabela para gerenciamento de login e senha com nível de acesso
 CREATE TABLE if not exists usuarios (
 id INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
 email VARCHAR(50) UNIQUE NOT NULL,
 senha VARCHAR(255) NOT NULL,
 nivel_acesso ENUM('coordenador','docente') NOT NULL,
