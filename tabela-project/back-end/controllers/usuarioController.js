@@ -20,7 +20,7 @@ exports.cadastrarUsuario = async (req,res) => {
     const resultado = await usuarioModel.cadastrar(
         nome,
         email,
-        hash
+        senha
     )
 
     // mensagem conforme tipo de usuario
