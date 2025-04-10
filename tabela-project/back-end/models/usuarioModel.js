@@ -2,13 +2,13 @@ const db = require('../config/db');
 const bcrypt = require('bcrypt')
 
 exports.buscarPorEmail = async (email) => {
-    try{
+    try {
         const [rows] = await db.query('SELECT * FROM usuarios WHERE email = ?', [email]);
         return rows[0] || null;
-    } catch (error){
+    } catch (error) {
         console.error('Erro ao buscar usuario por email:', error)
         throw error
-    }   
+    }
 }
 
 exports.verificarPrimeiroUsuario = async () => {
@@ -22,23 +22,63 @@ exports.verificarPrimeiroUsuario = async () => {
     }
 }
 exports.cadastrar = async (nome, email, senha, nivel_acesso) => {
+
+    const connection = db;
+
+    //verifica se eh o primeiro usuario
+    const isPrimeiroUsuario = await this.verificarPrimeiroUsuario();
+
+    const nivelFinal = isPrimeiroUsuario ? 'coordenador' : 'docente';
+
+    //criiptografando senha
+    const hash = await bcrypt.hash(senha, 10);
+
     try {
-        //verifica se eh o primeiro usuario
-        const isPrimeiroUsuario = await this.verificarPrimeiroUsuario();
-
-        const nivelFinal = isPrimeiroUsuario ? 'coordenador' : 'docente';
-
-        //criiptografando senha
-        const hash = await bcrypt.hash(senha, 10);
 
         //inserindo no banco de dados 
         const [result] = await db.query(
             'INSERT INTO usuarios (nome, email, senha, nivel_acesso) VALUES (?,?,?,?)',
             [nome, email, hash, nivelFinal]
         );
+
+        const userId = result.insertId;
+
+        // se for DOCENTE, tambem cadastrar na tabela docente
+
+        if (nivelFinal === 'docente') {
+            const [docenteResult] = await connection.query(
+                'INSERT INTO Docente (nome, email) VALUES (?, ?)',
+                [nome, email]
+            );
+            const docentId = docenteResult.insertId;
+
+            // atualizar usuario com o docenteId
+
+            await connection.query(
+                'UPDATE usuarios SET docente_id = ? WHERE id = ?',
+                [docenteId, userId]
+            );
+        } else if (nivelFinal === 'coordenador') {
+            // caso coordenador, cadastrar na tabela coordenadores
+            const [coordResult] = await connection.query(
+                'INSERT INTO coordenadores (nome,email) VALUES (?, ?)',
+                [nome, email]
+            )
+
+            const coordenadorId = coordResult.insertId
+
+            // atualizar usuario com coordenador_id
+            await connection.query(
+                'UPDATE usuarios SET coordenador_id = ? WHERE id = ?',
+                [coordenadorId, userId]
+            );
+
+        }
+
+
         return {
             success: true,
-            userId: result.insertId,
+            userId,
             nivel_acesso: nivelFinal,
             isFirstUser: isPrimeiroUsuario
         };
