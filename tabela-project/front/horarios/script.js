@@ -45,6 +45,7 @@ function generateCalendar(month, year) {
             cell.innerHTML += `<div class="event"> Aula: Desenvolvimento</div>`;
           }
         }
+// coordenador = false -> MOSTRA APENAS AS AULAS DO RESPECTIVO DOCENTE
         if (coordenador === false ){
 // docente === 1 -> É UM EXEMPLO, MAS DEVE SER TROCADO PELO ID DELE OU POR ALGUMA IDENTIFICAÇÃO
         if (docente === 1 ) {

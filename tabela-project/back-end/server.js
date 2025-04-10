@@ -1,7 +1,10 @@
 const express = require('express');
 const usuarioRoutes = require('./routes/usuarioRoutes');
 const app = express();
+const cors = require('cors');
 
+
+app.use(cors())
 
 // middleware para parsear JSON
 app.use(express.json());
