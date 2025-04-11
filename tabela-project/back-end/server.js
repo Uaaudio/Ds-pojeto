@@ -2,7 +2,15 @@ const express = require('express');
 const usuarioRoutes = require('./routes/usuarioRoutes');
 const app = express();
 const cors = require('cors');
+const session = require('express-session');
 
+
+app.use(session({
+    secret: 'segredoParaAlterar',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {secure: false}
+}))
 
 app.use(cors())
 
