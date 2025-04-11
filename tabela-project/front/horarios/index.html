@@ -9,11 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/db4f1d3b88.js" crossorigin="anonymous"></script>
 
-
+  
 </head>
 
 <body>
-
+  
   <div id="calendar">
     <div class="calendar-header">
       <button onclick="changeMonth(-1)">&#8592;</button>
@@ -36,8 +36,11 @@
         <!-- JavaScript vai preencher aqui -->
       </tbody>
     </table>
+    
+      <div class="calendar-header">
+        <button onclick="generateReport()" class="report-button">Gerar Relatório</button>
+      </div>
   </div>
-
 
 
   <script src="./script.js"></script>
@@ -52,9 +55,9 @@
           </a>
       </div>
       <ul>
-          <li class="item_menu">
-              <a href="../main/indes.html">
-                  <span class="icon"><i class="fa-solid fa-house-chimney"></i></span>
+        <li class="item_menu">
+          <a href="../main/indes.html">
+            <span class="icon"><i class="fa-solid fa-house-chimney"></i></span>
                   <span class="txt_link">Início</span>
               </a>
           </li>

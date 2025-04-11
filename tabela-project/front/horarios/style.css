@@ -4,10 +4,10 @@
 
 
 * {
-    font-family: 'Noto Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
@@ -22,17 +22,19 @@ body {
   min-height: 100vh;
   justify-content: center;
   align-items: center;
-  gap: 30px;      /* Espaço entre os cards */
-  flex-wrap: wrap;    /* Quebra linha em telas pequenas */
+  gap: 30px;
+  /* Espaço entre os cards */
+  flex-wrap: wrap;
+  /* Quebra linha em telas pequenas */
 }
 
 #calendar {
-  max-width: 900px;
-  min-width: 900px;
+  max-width: 1000px;
+  min-width: 1000px;
+  padding: 20px;
   margin: auto;
   background-color: #fff;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .calendar-header {
@@ -43,6 +45,7 @@ body {
 }
 
 .calendar-header h2 {
+  white-space: nowrap;
   margin: 0;
 }
 
@@ -52,12 +55,55 @@ button {
   cursor: pointer;
 }
 
+/* GERADOR DE PDF */
+.report-button {
+  background-color: #4e6e8e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  margin-bottom: -20px;
+  width: max-content;
+  min-width: min-content;
+}
+
+.report-button:hover {
+  background-color: #609ad4;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.report-button,
+#calendar {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.calendar-header button {
+  background-color: #4e6e8e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-left: 250px;  
+  margin-right: 250px;  
+  transition: all 0.3s ease;
+}
+
+
 table {
   width: 100%;
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   width: 14.28%;
   height: 100px;
   border: 1px solid #ddd;
