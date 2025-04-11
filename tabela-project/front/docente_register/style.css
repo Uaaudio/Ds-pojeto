@@ -68,6 +68,8 @@ input[type="tel"] {
     box-sizing: border-box;
     border-radius: 9px;
     border: 1px solid #d1d8e0;
+    cursor: pointer;
+    outline: none;
   }
 
   .bt_reg {
