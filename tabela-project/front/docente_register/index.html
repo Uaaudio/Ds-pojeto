@@ -12,9 +12,8 @@
 
 <body>
 
-  <h2>Registro de Professor</h2>
-
-  <form action="/registrar" method="post" class="box">
+<form action="/registrar" method="post" class="box">
+      <h1 id="titulo">Registrar de Professor</h1>
     <label for="nome">Nome:</label>
     <input type="text" id="nome" name="nome" required>
 
@@ -28,48 +27,50 @@
     <input type="tel" id="telefone" name="telefone" required pattern="\(\d{2}\)\s\d{4,5}-\d{4}"
       placeholder="(99) 99999-9999">
 
-    <button type="submit">Registrar</button>
+    <button class="bt_reg" type="submit">Registrar</button>
   </form>
+
+
 
 
     <!-- MENU LATERAL -->
     <nav class="menu_lateral">
 
-      <div class="b_expandir">
-          <a id="conta" href="../conta/indes.html">
-              <i class="fa-solid fa-circle-user"></i>
-          </a>
-      </div>
-      <ul>
-          <li class="item_menu">
-              <a href="../main/indes.html">
-                  <span class="icon"><i class="fa-solid fa-house-chimney"></i></span>
-                  <span class="txt_link">Início</span>
-              </a>
-          </li>
+        <div class="b_expandir">
+            <a id="conta" href="../conta/indes.html">
+                <i class="fa-solid fa-circle-user"></i>
+            </a>
+        </div>
+        <ul>
+            <li class="item_menu">
+                <a href="../main/indes.html">
+                    <span class="icon"><i class="fa-solid fa-house-chimney"></i></span>
+                    <span class="txt_link">Início</span>
+                </a>
+            </li>
 
-          <li class="item_menu">
-              <a href="../horarios/index.html">
-                  <span class="icon"><i class="fa-solid fa-clock"></i></span>
-                  <span class="txt_link">Horários</span>
-              </a>
-          </li>
-          <li class="item_menu">
-              <a href="#">
-                  <span class="icon"><i class="fa-solid fa-image"></i></span>
-                  <span class="txt_link">Galeria</span>
-              </a>
-          </li>
-          <li class="item_menu">
-              <a href="../info/indes.html">
-                  <span class="icon"><i class="fa-solid fa-circle-info"></i></span>
-                  <span class="txt_link">Sobre</span>
-              </a>
-          </li>
-      </ul>
+            <li class="item_menu">
+                <a href="../horarios/index.html">
+                    <span class="icon"><i class="fa-solid fa-clock"></i></span>
+                    <span class="txt_link">Horários</span>
+                </a>
+            </li>
+            <li class="item_menu">
+                <a href="/tabela-project/front/question/indes.html">
+                    <span class="icon"><i class="fa-solid fa-address-card"></i></span>
+                    <span class="txt_link">Registrar</span>
+                </a>
+            </li>
+            <li class="item_menu">
+                <a href="../info/indes.html">
+                    <span class="icon"><i class="fa-solid fa-circle-info"></i></span>
+                    <span class="txt_link">Sobre</span>
+                </a>
+            </li>
+        </ul>
 
-  </nav>
-  <!-- MENU LATERAL -->
+    </nav>
+    <!-- MENU LATERAL -->
 
 
 

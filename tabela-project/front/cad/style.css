@@ -42,10 +42,10 @@ h1 {
 
 /* Formulário de Cadastro */
 .login-container {
-    background-color: #a2d7d0; /* Verde Claro */
+    background-color: rgb(214, 218, 230);
     padding: 18px;
     border-radius: 9px;
-    border: 2px solid #d1d8e0; /* Cinza Claro */
+    border: 2px solid #415063;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 340px;
     text-align: center;
@@ -85,7 +85,7 @@ h1 {
 }
 
 .login-container button:hover {
-    background-color: #45a049; /* Verde Escuro */
+    background-color: #609ad4;
 }
 
 /* Estilo do link para login */

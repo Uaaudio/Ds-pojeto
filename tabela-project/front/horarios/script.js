@@ -2,8 +2,8 @@
 const monthYearEl = document.getElementById('monthYear');
 const calendarBody = document.getElementById('calendarBody');
 // EXEMPLO PARA DIFERENCIAR UM DOCENTE DE OUTRO
-const docente = 2;
-// IDENTIFICAR UM COORDENADOR
+const docente = 1;
+// PARA IDENTIFICAR SE É UM COORDENADOR
 const coordenador = false;
 
 const hoje = new Date();
@@ -40,7 +40,7 @@ function generateCalendar(month, year) {
         if (coordenador === true){
           if (dayOfWeek === 2) {
             cell.innerHTML += `<div class="event"> Aula: Internet das Coisas</div>`;
-          } 
+          }
           else if (dayOfWeek === 1 || dayOfWeek === 3 || dayOfWeek === 5) {
             cell.innerHTML += `<div class="event"> Aula: Desenvolvimento</div>`;
           }

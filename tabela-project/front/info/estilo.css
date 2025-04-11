@@ -150,29 +150,9 @@ body {
   'opsz' 24
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* MENU LATERAL */
 nav.menu_lateral {
-    width: 78px;
+    width: 72px;
     height: 100%;
     background-color: #2c3e50;
     /* Cinza Escuro */

@@ -40,10 +40,10 @@ h1 {
 
 /* Formulário de Login */
 .login-container {
-    background-color: #a2d7d0; /* Verde Claro */
+    background-color: rgb(214, 218, 230);
     padding: 18px;
     border-radius: 9px;
-    border: 2px solid #d1d8e0; /* Cinza Claro */
+    border: 2px solid #415063;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 340px;
     text-align: center;
@@ -53,7 +53,7 @@ h1 {
     text-shadow: 0 4px 45px #1e3d59;
     margin-bottom: 20px;
     font-size: 24px;
-    color: #2c3e50; /* Cinza Escuro */
+    color: #2c3e50;
 }
 
 .login-container input {
@@ -83,7 +83,7 @@ h1 {
 }
 
 .login-container button:hover {
-    background-color: #45a049; /* Verde Escuro */
+    background-color: #609ad4;
 }
 
 .login-container a {
@@ -93,7 +93,8 @@ h1 {
 }
 
 .login-container a:hover {
-    color: rgb(4, 77, 141);
+    color: #56a8f0; /* Azul Escuro */
+    transition: ease-in-out .4s;
 }
 
 /* Responsividade */

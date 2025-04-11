@@ -96,31 +96,15 @@ footer {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* MENU LATERAL */
-nav.menu_lateral{
-    width: 78px;
+nav.menu_lateral {
+    width: 72px;
     height: 100%;
-    background-color: #2c3e50; /* Cinza Escuro */
+    background-color: #2c3e50;
+    /* Cinza Escuro */
     padding: 40px 0 40px 1%;
-    box-shadow: 3px 0 0 #e7f1f9; /* Azul Claro */
+    box-shadow: 3px 0 0 #e7f1f9;
+    /* Azul Claro */
     position: fixed;
     top: 0;
     left: 0;
@@ -129,7 +113,7 @@ nav.menu_lateral{
     z-index: 1000;
 }
 
-nav.menu_lateral:hover{
+nav.menu_lateral:hover {
     width: 300px;
 }
 
@@ -141,11 +125,11 @@ nav.menu_lateral:hover{
     margin-bottom: 22px;
 }
 
-#conta{
+#conta {
     color: white;
 }
 
-.b_expandir > i {
+.b_expandir>i {
     color: white;
     font-size: 25px;
     cursor: pointer;
@@ -167,21 +151,23 @@ ul li.item_menu a {
     line-height: 35px;
 }
 
-ul li.item_menu a .txt_link{
+ul li.item_menu a .txt_link {
     margin-left: 40px;
 }
 
-ul li.item_menu a .icon > i{
+ul li.item_menu a .icon>i {
     font-size: 25px;
     margin-left: 10px;
 }
 
-ul li.item_menu{
+ul li.item_menu {
     transition: .4s;
 }
 
-ul li.item_menu:hover{
+ul li.item_menu:hover {
     border-radius: 10px;
-    background-color:  #006bd6; /* Azul */
+    background-color: #006bd6;
+    /* Azul */
 }
+
 /* MENU LATERAL */
