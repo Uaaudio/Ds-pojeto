@@ -45,8 +45,7 @@ body::before {
 .boxGif {
   background-color: rgb(214, 218, 230);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 200px;
-  min-width: max-content;
+  width: 1000px;
   /* Corrigi de 300vw para 300px */
   height: 450px;
   /* Mudei de min-height para height fixa */
@@ -72,7 +71,8 @@ body::before {
 }
 
 .gif {
-  width: 80%;
+  width: 100px;
+  min-width: 450px;
   /* Reduzi de 12vw para porcentagem relativa */
   height: auto;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
@@ -80,12 +80,113 @@ body::before {
   /* Garante proporção da imagem */
 }
 
-.pg_principal {
+.pgs {
   margin-right: 200px;
+}
+
+.pg_princ{
+  background: linear-gradient(135deg, #2c5fa8, #1a4080);
+  background-size: 30px;
+  color: white;
+  box-shadow: 0 4px 15px rgba(44, 95, 168, 0.3);
+  padding: 10%;
+  width: 22rem;
+  margin-right: 65px;
+  border-radius: 30px;
+}
+
+/* Estilos para os botões */
+.bt_docente, .bt_coordenador {
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+  width: 100%;
+  max-width: 200px;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.bt_docente {
+  width: 185px;
+  height: 50px;
+  margin-top: 25px;
+  background: linear-gradient(135deg, #2c5fa8, #1a4080);
+  color: white;
+  box-shadow: 0 4px 15px rgba(44, 95, 168, 0.3);
+}
+
+.bt_coordenador {
+  width: 185px;
+  height: 50px;
+  margin-top: -10px;
+  background: linear-gradient(135deg, #2c5fa8, #1a4080);
+  color: white;
+  box-shadow: 0 4px 15px rgba(44, 95, 168, 0.3);
+}
+
+/* Efeitos hover */
+.bt_docente:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(44, 95, 168, 0.4);
+}
+
+.bt_coordenador:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+/* Efeito de clique */
+.bt_docente:active, .bt_coordenador:active {
+  transform: translateY(0);
+}
+
+/* Ícones */
+.fa-solid.fa-plus {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
 }
 
 
 
+/* Ajustes no layout */
+.pgs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.pg01, .pg02 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pg01 a, .pg02 a {
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.pg01 a, .pg02 a, .pg_princ{
+  align-items: center;
+  justify-content: center;
+  margin-right: 10%;
+}
 
 
 
@@ -94,6 +195,7 @@ body::before {
 nav.menu_lateral {
   width: 72px;
   height: 100%;
+  white-space: nowrap;
   background-color: #2c3e50;
   /* Cinza Escuro */
   padding: 40px 0 40px 1%;
@@ -108,7 +210,7 @@ nav.menu_lateral {
 }
 
 nav.menu_lateral:hover {
-  width: 300px;
+  width: 320px;
 }
 
 

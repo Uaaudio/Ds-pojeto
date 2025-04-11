@@ -2,9 +2,9 @@
 const monthYearEl = document.getElementById('monthYear');
 const calendarBody = document.getElementById('calendarBody');
 // EXEMPLO PARA DIFERENCIAR UM DOCENTE DE OUTRO
-const docente = 1;
+const docente = 2;
 // PARA IDENTIFICAR SE É UM COORDENADOR
-const coordenador = false;
+const coordenador = true;
 
 const hoje = new Date();
 let currentMonth = hoje.getMonth();
